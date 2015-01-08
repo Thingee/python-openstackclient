@@ -17,7 +17,7 @@ import mock
 
 from openstackclient.tests import fakes
 from openstackclient.tests import utils
-from openstackclient.tests.volume.v1 import fakes as volume_fakes
+from openstackclient.tests.volume.v2 import fakes as volume_fakes
 
 
 image_id = 'im1'
@@ -66,7 +66,7 @@ class TestImagev1(utils.TestCommand):
             endpoint=fakes.AUTH_URL,
             token=fakes.AUTH_TOKEN,
         )
-        self.app.client_manager.volume = volume_fakes.FakeVolumev1Client(
+        self.app.client_manager.volume = volume_fakes.FakeVolumev2Client(
             endpoint=fakes.AUTH_URL,
             token=fakes.AUTH_TOKEN,
         )

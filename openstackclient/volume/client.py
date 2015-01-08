@@ -16,13 +16,13 @@
 import logging
 
 from cinderclient import extension
-from cinderclient.v1.contrib import list_extensions
-from cinderclient.v1 import volume_snapshots
-from cinderclient.v1 import volumes
+from cinderclient.v2.contrib import list_extensions
+from cinderclient.v2 import volume_snapshots
+from cinderclient.v2 import volumes
 
 from openstackclient.common import utils
 
-# Monkey patch for v1 cinderclient
+# Monkey patch for v2 cinderclient
 volumes.Volume.NAME_ATTR = 'display_name'
 volume_snapshots.Snapshot.NAME_ATTR = 'display_name'
 
@@ -32,7 +32,7 @@ DEFAULT_VOLUME_API_VERSION = '1'
 API_VERSION_OPTION = 'os_volume_api_version'
 API_NAME = "volume"
 API_VERSIONS = {
-    "1": "cinderclient.v1.client.Client"
+    "2": "cinderclient.v2.client.Client"
 }
 
 

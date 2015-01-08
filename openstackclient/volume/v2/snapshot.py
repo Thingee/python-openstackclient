@@ -13,7 +13,7 @@
 #   under the License.
 #
 
-"""Volume v1 Snapshot action implementations"""
+"""Volume v2 Snapshot action implementations"""
 
 import logging
 import six

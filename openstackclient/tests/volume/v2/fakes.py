@@ -84,7 +84,7 @@ class FakeImagev1Client(object):
         self.images = mock.Mock()
 
 
-class FakeVolumev1Client(object):
+class FakeVolumev2Client(object):
     def __init__(self, **kwargs):
         self.volumes = mock.Mock()
         self.volumes.resource_class = fakes.FakeResource(None, {})
@@ -96,11 +96,11 @@ class FakeVolumev1Client(object):
         self.management_url = kwargs['endpoint']
 
 
-class TestVolumev1(utils.TestCommand):
+class TestVolumev2(utils.TestCommand):
     def setUp(self):
-        super(TestVolumev1, self).setUp()
+        super(TestVolumev2, self).setUp()
 
-        self.app.client_manager.volume = FakeVolumev1Client(
+        self.app.client_manager.volume = FakeVolumev2Client(
             endpoint=fakes.AUTH_URL,
             token=fakes.AUTH_TOKEN,
         )

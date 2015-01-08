@@ -17,11 +17,11 @@ import copy
 
 from openstackclient.tests import fakes
 from openstackclient.tests.identity.v2_0 import fakes as identity_fakes
-from openstackclient.tests.volume.v1 import fakes as volume_fakes
-from openstackclient.volume.v1 import volume
+from openstackclient.tests.volume.v2 import fakes as volume_fakes
+from openstackclient.volume.v2 import volume
 
 
-class TestVolume(volume_fakes.TestVolumev1):
+class TestVolume(volume_fakes.TestVolumev2):
 
     def setUp(self):
         super(TestVolume, self).setUp()
